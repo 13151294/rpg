@@ -1,0 +1,39 @@
+/*#region Basic*/
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: #2C394B;
+}
+body {
+    display: grid;
+    place-items: center;
+}
+:root {
+    --blockSize: 5vmin;
+}
+/*#endregion Basic*/
+#screen {
+    width: calc((var(--blockSize) * 9) + (0.5vmin * 8));
+    height: calc((var(--blockSize) * 9) + (0.5vmin * 8));
+    display: grid;
+    place-items: center;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto;
+    gap: 0.5vmin 0.5vmin;
+}
+
+/*#region block*/
+.blocks {
+    width: var(--blockSize);
+    height: var(--blockSize);
+    border-radius: 25%;
+    background: #EFF5F5;
+}
+.player {
+    background: #FF4C29;
+    border-radius: 50%;
+}
+.grass {
+    background: #41980A;
+}
+/*#endregion block*/
