@@ -46,8 +46,8 @@ body {
     ;
     bottom: 5vmin;
 }
-@media screen {
-    #joystick {
+@media screen and (max-width: 600px) {
+    #joygame {
         display: grid;
     }   
 }
