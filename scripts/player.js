@@ -6,7 +6,7 @@ function walk(y, x) {
     }
     visibleChunk[player.y][player.x] = 1
 
-    document.getElementById("player-pos").innerHTML = "pos : (" + player.x + ", " + player.y + ")"
+    document.getElementById("player-pos").innerHTML = "pos : (" + (player.x - 8) + ", " + -(player.y - 8) + ")"
     document.getElementById("chunk-pos").innerHTML = "chunk pos : (" + player.chunkX + ", " + -player.chunkY + ")"
 
     display()
@@ -27,13 +27,16 @@ class Player {
         }
     }
     moveChunk(y, x) {
-        if (x < 0 || x > 8) {
+        if (x < 0 || x > chunkSize - 1) {
             this.chunkX = this.chunkX + ((x > chunkSize - 1) ? 1 : -1)
-            this.x = (x > chunkSize - 1) ? 0 : chunkSize
-        } else {
+            this.x = (x > chunkSize - 1) ? 0 : chunkSize - 1
+        }
+        if (y < 0 || y > chunkSize - 1) {
             this.chunkY = this.chunkY + ((y > chunkSize - 1) ? 1 : -1)
             this.y = (y > chunkSize - 1) ? 0 : chunkSize - 1
         }
+        console.table([[this.chunkX, this.chunkY], [x, y]])
+
     }
     currentChunk() {
         for (let i = 0; i < allChunk.length; i++) {
