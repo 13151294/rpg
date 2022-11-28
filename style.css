@@ -14,12 +14,13 @@ body {
     flex-direction: column;
 }
 :root {
-    --blockSize: 5vmin;
+    --blockSize: 3vmin;
+    --chunkNum: 9;
 }
 /*#endregion Basic*/
 #screen {
-    width: calc((var(--blockSize) * 9) + (0.5vmin * 8));
-    height: calc((var(--blockSize) * 9) + (0.5vmin * 8));
+    width: calc((var(--blockSize) * var(--chunkNum)) + (0.5vmin * (var(--chunkNum) - 1)));
+    height: calc((var(--blockSize) * var(--chunkNum)) + (0.5vmin * (var(--chunkNum) - 1)));
     display: grid;
     place-items: center;
     grid-template-columns: auto auto auto auto auto auto auto auto auto;
