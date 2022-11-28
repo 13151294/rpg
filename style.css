@@ -19,12 +19,11 @@ body {
 }
 /*#endregion Basic*/
 #screen {
-    width: calc((var(--blockSize) * var(--chunkNum)) + (0.5vmin * (var(--chunkNum) - 1)));
-    height: calc((var(--blockSize) * var(--chunkNum)) + (0.5vmin * (var(--chunkNum) - 1)));
+    width: calc((var(--blockSize) * var(--chunkNum)) + (0vmin * (var(--chunkNum) - 1)));
+    height: calc((var(--blockSize) * var(--chunkNum)) + (0vmin * (var(--chunkNum) - 1)));
     display: grid;
     place-items: center;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto;
-    gap: 0.5vmin 0.5vmin;
+    grid-template-columns: auto;
 }
 #position {
     color: #EFF5F5;
@@ -69,8 +68,8 @@ body {
     background: #EFF5F5;
 }
 .player {
-    background: #FF4C29;
-    border-radius: 50%;
+    background: #FF0000;
+    border-radius: 25%;
 }
 .grass {
     background: #41980A;
