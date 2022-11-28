@@ -34,6 +34,33 @@ body {
     flex-direction: row;
     gap: 1vmin;
 }
+#joygame {
+    position: absolute;
+    width: 40vmin;
+    height: 40vmin;
+    display: none;
+    grid-template-areas: 
+    ".. up .."
+    "left .. right"
+    ".. down .."
+    ;
+    bottom: 5vmin;
+}
+@media screen {
+    #joystick {
+        display: grid;
+    }   
+}
+.joystick {
+    background: #D6E4E5;
+    border-radius: 100%;
+    color: #082032;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 8vmin;
+}
 /*#region block*/
 .blocks {
     width: var(--blockSize);

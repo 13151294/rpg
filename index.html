@@ -11,7 +11,8 @@
     <!--JavaScript-->
     <script src="scripts/main.js"></script>
     <script src="scripts/player.js"></script>
-
+    <!--Import-->
+    <script src="https://kit.fontawesome.com/9d46fcd926.js" crossorigin="anonymous"></script>
 </head>
 <body onload="start()">
     <!--Screen-->
@@ -21,5 +22,19 @@
     </header>
     <article id="screen">
     </article>
+    <footer id="joygame">
+        <div class="joystick" style="grid-area: up;" onclick="walk(-1, 0)">
+            <i class="fa fa-arrow-up"></i>
+        </div>
+        <div class="joystick" style="grid-area: left;" onclick="walk(0, -1)">
+            <i class="fa fa-arrow-left"></i>
+        </div>
+        <div class="joystick" style="grid-area: right;" onclick="walk(0, 1)">
+            <i class="fa fa-arrow-right"></i>
+        </div>
+        <div class="joystick" style="grid-area: down;" onclick="walk(1, 0)">
+            <i class="fa fa-arrow-down"></i>
+        </div>
+    </footer>
 </body>
 </html>
