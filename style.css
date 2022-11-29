@@ -24,6 +24,8 @@ body {
     display: grid;
     place-items: center;
     grid-template-columns: auto;
+    border-radius: 0.75vmin;
+    background: #3b840e;
 }
 #position {
     color: #EFF5F5;
@@ -69,9 +71,14 @@ body {
 }
 .player {
     background: #FF0000;
-    border-radius: 25%;
 }
 .grass {
     background: #41980A;
+}
+.stone {
+    background: #AAACAF;
+}
+.tree {
+    background: linear-gradient(to bottom, #387024 50%, #99755A 50%);
 }
 /*#endregion block*/

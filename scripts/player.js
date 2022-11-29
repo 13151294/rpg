@@ -4,7 +4,7 @@ function walk(y, x) {
     for (let y = 0; y < chunkSize; y++) {
         visibleChunk[y] = chunk.chunkMap[y].slice()
     }
-    visibleChunk[player.y][player.x] = 1
+    visibleChunk[player.y][player.x] = 900
 
     document.getElementById("player-pos").innerHTML = "pos : (" + (player.x - 8) + ", " + -(player.y - 8) + ")"
     document.getElementById("chunk-pos").innerHTML = "chunk pos : (" + player.chunkX + ", " + -player.chunkY + ")"
@@ -44,7 +44,7 @@ class Player {
                 return allChunk[i]
             }
         }
-        let chunk = new Chunk(this.chunkX, this.chunkY)
+        let chunk = new Chunk(this.chunkX, this.chunkY, 100)
         return chunk
     }
 }
