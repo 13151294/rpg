@@ -4,4 +4,4 @@
 ## When will this finish
 > according to my plan this game should be done in february
 ## Where is link
-[Play RPG!! HERE](https://13151294.github.io/rpg/)
+[PLAY RPG!! HERE](https://13151294.github.io/rpg/)
