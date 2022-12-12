@@ -20,7 +20,7 @@ window.addEventListener('mouseup', () => {
 window.addEventListener('mousemove', client => {
     client.preventDefault()
     if (isDown) {
-        dragToMove((client.movementX, client.movementY))
+        dragToMove([client.movementX, client.movementY])
     }
 });
 
