@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
 :root {
+    --node-size: 12vmin;
+    --node-color: #F0E7F2; 
+
     --bg-color: #101820;
     --font-color: #993AAE;
 }
@@ -9,6 +12,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+
+    overflow: hidden;
 }
 
 body {
@@ -22,4 +27,25 @@ body {
 
     display: grid;
     place-content: center;
+}
+viewer {
+    position: relative;
+    top: 50%;
+    left: 50%;
+}
+chunk {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    gap: 0.4vmin;
+}
+node {
+    width: var(--node-size);
+    aspect-ratio: 1;
+
+    background: var(--node-color);
+    border-radius: 5%;
 }
