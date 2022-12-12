@@ -2,9 +2,11 @@
 
 :root {
     --node-size: 12vmin;
-    --node-color: #F0E7F2; 
+    --node-color: #F0E7F2;
 
     --bg-color: #101820;
+    --lock-open-color: #222823;
+    --lock-color: #575a5e;
     --font-color: #993AAE;
 }
 html, body {
@@ -30,10 +32,27 @@ body {
 }
 viewer {
     position: relative;
-    top: 50%;
-    left: 50%;
-    
+
     overflow: hidden;
+}
+#lock {
+    width: 10vmin;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 2.5vmin;
+    left: 2.5vmin;
+    z-index: 9999;
+    
+    background: var(--lock-color);
+    opacity: 0.75;
+    border: 0;
+    border-radius: 100%;
+
+    font-size: 5vmin;
+    color: var(--node-color);
+}
+#lock[data-active="true"] {
+    background: var(--lock-open-color);
 }
 chunk {
     width: fit-content;
@@ -50,4 +69,8 @@ node {
 
     background: var(--node-color);
     border-radius: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

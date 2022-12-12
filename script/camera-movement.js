@@ -7,6 +7,7 @@ const viewportMin = (x) => { return Math.min(window.innerHeight, window.innerWid
 const chunkWidth = () => { return document.getElementsByTagName("chunk")[0].getBoundingClientRect().width }
 let chunkX = 0;
 let chunkY = 0;
+var isLocked = false
 
 var isDown = false;
 window.addEventListener('mousedown', () => {
@@ -33,6 +34,7 @@ window.addEventListener('touchmove', client => {
     lastXY = [client.touches[0].clientX, client.touches[0].clientY]
 })
 function dragToMove (clientMovement) {
+    if (isLocked) {return}
     let viewer = document.querySelector("viewer")
 
     //drag to move
@@ -69,5 +71,19 @@ function dragToMove (clientMovement) {
                 chunks.push(new Chunk(chunkX + x, chunkY + y))
             }
         }
+    }
+}
+function lock() {
+    let lockElement = document.getElementById("lock")
+    
+    if (lockElement.getAttribute("data-active") == "true") {
+        lockElement.setAttribute("data-active", false)
+        lockElement.innerHTML = '<i class="fas fa-lock-open"></i>'
+        isLocked = false
+    }
+    else {
+        lockElement.setAttribute("data-active", true)
+        lockElement.innerHTML = '<i class="fas fa-lock"></i>'
+        isLocked = true
     }
 }

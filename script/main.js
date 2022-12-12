@@ -14,14 +14,28 @@ class Chunk {
         chunk.style.gridTemplateColumns = "auto ".repeat(chunkSize)
 
         //create chunk map
-        let i = 0
-        while (i < chunkSize**2) {
+        let nodeX = 0
+        let nodeY = 0
+
+        this.chunkMap = []
+        while (nodeY < chunkSize) {
             let node = document.createElement("node")
-            node.setAttribute("data-index-y", Math.floor(i / chunkSize))
-            node.setAttribute("data-index-x", i % chunkSize)
+            node.setAttribute("data-pos", nodeX + ' ' + nodeY)
+
+            node.addEventListener('click', () => {
+                let localX = parseInt(node.getAttribute('data-pos').split('')[0])
+                let localY = parseInt(node.getAttribute('data-pos').split('')[2])
+
+                this.onNodeClicked(localX, localY)
+            })
+
             chunk.append(node)
 
-            i++
+            nodeX++
+            if (nodeX >= chunkSize) {
+                nodeX = 0
+                nodeY++
+            }
         }
 
         this.element = chunk
@@ -29,12 +43,20 @@ class Chunk {
         //push chunk into viewer
         let viewer = document.querySelector("viewer")
         viewer.append(chunk)
+    }
+    onNodeClicked (x, y) {
+        if (!isLocked) {return}
 
+        
     }
 }
 const chunkSize = 8
 var chunks = []
 
 function start() {
-    chunks[0] = new Chunk(0, 0)
+    for (let x = -1; x <= 1; x++) {
+        for (let y = -1; y <= 1; y++) {
+            chunks.push(new Chunk(x, y))
+        }
+    }
 }
