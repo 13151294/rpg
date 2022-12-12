@@ -8,6 +8,8 @@
     --lock-open-color: #222823;
     --lock-color: #575a5e;
     --font-color: #993AAE;
+
+    --grass-color: #348C31;
 }
 html, body {
     width: 100%;
@@ -40,7 +42,7 @@ viewer {
     aspect-ratio: 1;
     position: absolute;
     top: 2.5vmin;
-    left: 2.5vmin;
+    right: 2.5vmin;
     z-index: 9999;
     
     background: var(--lock-color);
@@ -54,6 +56,14 @@ viewer {
 #lock[data-active="true"] {
     background: var(--lock-open-color);
 }
+canvas {
+    position: relative;
+    z-index: 1000;
+    padding: 10px;
+
+    background: var(--bg-color);
+    border-radius: 10%;
+} 
 chunk {
     width: fit-content;
     height: fit-content;
@@ -73,4 +83,7 @@ node {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+node[data-biome="grass"] {
+    background-color: var(--grass-color);
 }

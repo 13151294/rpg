@@ -33,6 +33,7 @@ window.addEventListener('touchmove', client => {
     dragToMove([client.touches[0].clientX - lastXY[0], client.touches[0].clientY - lastXY[1]])
     lastXY = [client.touches[0].clientX, client.touches[0].clientY]
 })
+
 function dragToMove (clientMovement) {
     if (isLocked) {return}
     let viewer = document.querySelector("viewer")

@@ -46,8 +46,6 @@ class Chunk {
     }
     onNodeClicked (x, y) {
         if (!isLocked) {return}
-
-        
     }
 }
 const chunkSize = 8
@@ -59,4 +57,6 @@ function start() {
             chunks.push(new Chunk(x, y))
         }
     }
+
+    draw()
 }
