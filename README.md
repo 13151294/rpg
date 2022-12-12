@@ -1,8 +1,6 @@
 # **RPG**
 ## What is this
----
 > this is web game that allow user to build make anything
----
 ## When will this finish
 > according to my plan this game should be done in february
 ## Where is link
